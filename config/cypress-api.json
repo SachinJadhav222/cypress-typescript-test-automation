@@ -1,0 +1,17 @@
+{
+  "$schema": "https://on.cypress.io/cypress.schema.json",
+  "integrationFolder": "cypress/test/api",
+  "baseUrl": "https://jsonplaceholder.typicode.com/users",
+  "pluginsFile": "cypress/plugins/index.js",
+  "video": false,
+  "videosFolder": "./reports/videos",
+  "screenshotsFolder": "./resports/screenshots",
+  "screenshotOnRunFailure": false,
+  "trashAssetsBeforeRuns": true,
+  "defaultCommandTimeout": 100000,
+  "pageLoadTimeout": 100000,
+  "testFiles": "**/*.ts"
+  
+  
+
+}

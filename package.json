@@ -1,0 +1,24 @@
+{
+  "name": "cypress-typesript-test-automation",
+  "version": "1.0.0",
+  "description": "Cypress bases Test Automation framework",
+  "scripts": {
+    "test":"npm run clean && npm run test-run",
+    "start":"npm run clean && npm run test-open",
+    "test-open": "npx cypress open",
+    "test-run": "npx cypress run",
+    "clean": "node ./cypress/utils/clean.js",
+    "test-api": "npx cypress open --config-file ./config/cypress-api.json",
+    "test-ui": "npx cypress open --config-file ./config/cypress-ui.json"
+  },
+  "author": "Sachin Jadhav",
+  "license": "ISC",
+  "dependencies": {
+    "@bahmutov/cy-api": "^1.6.2",
+    "fs-extra": "5.0.0",
+    "cypress": "^9.1.1",
+    "cypress-xpath": "^1.6.2",
+    "typescript": "^4.5.3"
+  },
+  "devDependencies": {}
+}

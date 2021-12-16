@@ -1,0 +1,19 @@
+{
+    "$schema": "https://on.cypress.io/cypress.schema.json",
+    "integrationFolder": "cypress/test",    
+    "baseUrl": "http://automationpractice.com/index.php",
+    "pluginsFile": "cypress/plugins/index.js",
+    "video": true,
+    "videosFolder": "./reports/videos",
+    "screenshotsFolder": "./resports/screenshots",
+    "screenshotOnRunFailure": true,
+    "trashAssetsBeforeRuns": true,
+    "defaultCommandTimeout": 100000,
+    "pageLoadTimeout": 100000,
+    "testFiles": "**/*.*",
+    "ignoreTestFiles": [
+      "*.js",
+      "*.md"
+    ],
+    "projectId": "bachhp"
+  }
