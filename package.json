@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Cypress bases Test Automation framework",
   "scripts": {
-    "test": "npm run clean && npm run test-run && npm run report",
+    "test": "npm run clean && npm run test-run",
     "start": "npm run clean && npm run test-open",
     "test-open": "npx cypress open",
     "test-run": "npx cypress run",
