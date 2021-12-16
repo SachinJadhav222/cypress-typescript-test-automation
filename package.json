@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "description": "Cypress bases Test Automation framework",
   "scripts": {
-    "test":"npm run clean && npm run test-run",
-    "start":"npm run clean && npm run test-open",
+    "test": "npm run clean && npm run test-run",
+    "start": "npm run clean && npm run test-open",
     "test-open": "npx cypress open",
     "test-run": "npx cypress run",
     "clean": "node ./cypress/utils/clean.js",
     "test-api": "npx cypress open --config-file ./config/cypress-api.json",
-    "test-ui": "npx cypress open --config-file ./config/cypress-ui.json"
+    "test-ui": "npx cypress open --config-file ./config/cypress-ui.json",
+
+    "allure-report": "allure generate allure-results --clean -o reports",
+    "allure-executer": "node cypress/utils/report-executer.js",
+    "report": "npm run allure-report && npm run allure-executer"
   },
   "author": "Sachin Jadhav",
   "license": "ISC",
@@ -20,5 +24,7 @@
     "cypress-xpath": "^1.6.2",
     "typescript": "^4.5.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.23.0"
+  }
 }
