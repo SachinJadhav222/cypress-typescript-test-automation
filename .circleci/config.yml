@@ -29,8 +29,11 @@ jobs:
       
       - store_artifacts:
           name: Uploading cypress/videos artifacts
-          path: videos
+          path: reports/videos
       - store_artifacts:
           name: Uploading cypress/screenshots artifacts
-          path: screenshots
+          path: reports/screenshots
+      - store_artifacts:
+          name: Uploading allure-report artifacts
+          path: reports
       
