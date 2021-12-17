@@ -10,6 +10,9 @@
     "clean": "node ./cypress/utils/clean.js",
     "test-api": "npx cypress open --config-file ./config/cypress-api.json",
     "test-ui": "npx cypress open --config-file ./config/cypress-ui.json",
+    "runner":"npx ts-node ./config/runner.ts",
+    "spec-api": "npx cypress run --spec cypress/test/api/*.ts",
+    "spec-ui": "npx cypress run --spec cypress/test/ui/*.ts",
 
     "allure-report": "allure generate allure-results --clean -o reports",
     "allure-executer": "node cypress/utils/report-executer.js",
