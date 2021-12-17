@@ -15,6 +15,7 @@
 // the project's config changing)
 
 const allureWriter = require('@shelex/cypress-allure-plugin/writer');
+const dotenvPlugin = require('cypress-dotenv');
 
 /**
  * @type {Cypress.PluginConfig}
@@ -22,5 +23,6 @@ const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 // eslint-disable-next-line no-unused-vars
 module.exports = (on, config) => {
   allureWriter(on, config);
+  dotenvPlugin(config);
     return config;
 }

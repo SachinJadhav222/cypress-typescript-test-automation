@@ -10,10 +10,9 @@
     "clean": "node ./cypress/utils/clean.js",
     "test-api": "npx cypress open --config-file ./config/cypress-api.json",
     "test-ui": "npx cypress open --config-file ./config/cypress-ui.json",
-    "runner":"npx ts-node ./config/runner.ts",
+    "runner": "npx ts-node ./config/runner.ts",
     "spec-api": "npx cypress run --spec cypress/test/api/*.ts",
     "spec-ui": "npx cypress run --spec cypress/test/ui/*.ts",
-
     "allure-report": "allure generate allure-results --clean -o reports",
     "allure-executer": "node cypress/utils/report-executer.js",
     "report": "npm run allure-report && npm run allure-executer"
@@ -28,6 +27,8 @@
     "typescript": "^4.5.3"
   },
   "devDependencies": {
-    "@shelex/cypress-allure-plugin": "^2.23.0"
+    "@shelex/cypress-allure-plugin": "^2.23.0",
+    "cypress-dotenv": "^2.0.0",
+    "dotenv": "^10.0.0"
   }
 }
