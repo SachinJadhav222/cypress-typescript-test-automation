@@ -5,7 +5,7 @@
   "pluginsFile": "cypress/plugins/index.js",
   "video": false,
   "videosFolder": "./reports/videos",
-  "screenshotsFolder": "./resports/screenshots",
+  "screenshotsFolder": "./reports/screenshots",
   "screenshotOnRunFailure": false,
   "trashAssetsBeforeRuns": true,
   "defaultCommandTimeout": 100000,

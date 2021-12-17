@@ -15,15 +15,17 @@
     "spec-ui": "npx cypress run --spec cypress/test/ui/*.ts",
     "allure-report": "allure generate allure-results --clean -o reports",
     "allure-executer": "node cypress/utils/report-executer.js",
-    "report": "npm run allure-report && npm run allure-executer"
+    "report": "npm run allure-executer && npm run allure-report"
   },
   "author": "Sachin Jadhav",
   "license": "ISC",
   "dependencies": {
     "@bahmutov/cy-api": "^1.6.2",
-    "fs-extra": "5.0.0",
     "cypress": "^9.1.1",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-iframe": "^1.0.1",
     "cypress-xpath": "^1.6.2",
+    "fs-extra": "5.0.0",
     "typescript": "^4.5.3"
   },
   "devDependencies": {
