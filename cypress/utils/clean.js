@@ -1,7 +1,7 @@
-const fs = require("fs-extra");
+const fs = require('fs-extra');
 
-if (fs.existsSync("reports")) {
-  fs.emptyDirSync("reports");
+if (fs.existsSync('reports')) {
+  fs.emptyDirSync('reports');
 }
 
-console.log("Cleaned----->>");
+console.log('Cleaned----->>');

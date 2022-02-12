@@ -24,5 +24,5 @@ const dotenvPlugin = require('cypress-dotenv');
 module.exports = (on, config) => {
   allureWriter(on, config);
   dotenvPlugin(config);
-    return config;
-}
+  return config;
+};

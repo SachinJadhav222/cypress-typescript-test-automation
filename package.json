@@ -15,22 +15,37 @@
     "spec-ui": "npx cypress run --spec cypress/test/ui/*.ts",
     "allure-report": "allure generate allure-results --clean -o reports",
     "allure-executer": "node cypress/utils/report-executer.js",
-    "report": "npm run allure-executer && npm run allure-report"
+    "report": "npm run allure-executer && npm run allure-report",
+    "build:docs": "typedoc --tsconfig ./tsconfig.json --options typedoc.json",
+    "lint": "eslint .",
+    "prettier-format": "prettier --config .prettierrc.js '**/*.ts' --write"
   },
   "author": "Sachin Jadhav",
   "license": "ISC",
   "dependencies": {
     "@bahmutov/cy-api": "^1.6.2",
+    "ajv": "^8.10.0",
     "cypress": "^9.1.1",
     "cypress-file-upload": "^5.0.8",
     "cypress-iframe": "^1.0.1",
     "cypress-xpath": "^1.6.2",
+    "eslint": "^8.8.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "fs-extra": "5.0.0",
+    "husky": "^7.0.4",
+    "prettier": "^2.5.1",
+    "typedoc": "^0.22.11",
+    "typedoc-neo-theme": "^1.1.1",
     "typescript": "^4.5.3"
   },
   "devDependencies": {
     "@shelex/cypress-allure-plugin": "^2.23.0",
     "cypress-dotenv": "^2.0.0",
     "dotenv": "^10.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo precommit hook"
+    }
   }
 }

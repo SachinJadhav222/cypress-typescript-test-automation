@@ -1,16 +1,16 @@
 //const cypress = require('cypress');
 
-import cypress from 'cypress'
+import cypress from 'cypress';
 
 const cypressConfig = {
-    video: false,
-    browser: 'chrome',
-    config: {
-        integrationFolder: 'cypress/test'
-    },
-    env: {
-        allure: true
-    }
+  video: false,
+  browser: 'chrome',
+  config: {
+    integrationFolder: 'cypress/test',
+  },
+  env: {
+    allure: true,
+  },
 };
 
 // const cypressCucumberConfig = {
@@ -25,7 +25,7 @@ const cypressConfig = {
 // };
 
 (async function () {
-    //await cypress.run(cypressConfig);
-    await cypress.open(cypressConfig);
-   // await cypress.run(cypressCucumberConfig);
+  //await cypress.run(cypressConfig);
+  await cypress.open(cypressConfig);
+  // await cypress.run(cypressCucumberConfig);
 })();
