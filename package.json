@@ -17,12 +17,13 @@
     "allure-executer": "node cypress/utils/report-executer.js",
     "report": "npm run allure-executer && npm run allure-report",
     "build:docs": "typedoc --tsconfig ./tsconfig.json --options typedoc.json",
+    "precommit": "npm run prettier-format && npm run lint",
     "lint": "eslint .",
     "prettier-format": "prettier --config .prettierrc.js '**/*.ts' --write"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "echo precommit hook"
+      "pre-commit": "npm run precommit"
     }
   },
   "author": "Sachin Jadhav",
@@ -46,6 +47,7 @@
   "devDependencies": {
     "@shelex/cypress-allure-plugin": "^2.23.0",
     "cypress-dotenv": "^2.0.0",
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "husky": "^7.0.4"
   }
 }
