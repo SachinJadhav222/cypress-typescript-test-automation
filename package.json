@@ -20,6 +20,11 @@
     "lint": "eslint .",
     "prettier-format": "prettier --config .prettierrc.js '**/*.ts' --write"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo precommit hook"
+    }
+  },
   "author": "Sachin Jadhav",
   "license": "ISC",
   "dependencies": {
@@ -42,10 +47,5 @@
     "@shelex/cypress-allure-plugin": "^2.23.0",
     "cypress-dotenv": "^2.0.0",
     "dotenv": "^10.0.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "echo precommit hook"
-    }
   }
 }
