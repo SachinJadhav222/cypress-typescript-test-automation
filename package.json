@@ -17,7 +17,7 @@
     "allure-executer": "node cypress/utils/report-executer.js",
     "report": "npm run allure-executer && npm run allure-report",
     "build:docs": "typedoc --tsconfig ./tsconfig.json --options typedoc.json",
-    "precommit": "npm run prettier-format && npm run lint",
+    "precommit": "npm run prettier-format && git status",
     "lint": "eslint .",
     "prettier-format": "prettier --config .prettierrc.js '**/*.ts' --write",
     "prepare": "husky install"
