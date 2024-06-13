@@ -1,37 +1,23 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine.
+# See: https://circleci.com/docs/configuration-reference
 version: 2.1
-jobs:
-  build:
-    docker:
-      - image: circleci/node:latest-browsers
-        environment:
-          ## this enables colors in the output
-          TERM: xterm
-    working_directory: /tmp/workspace
-    steps:
-      - checkout
-      - restore_cache:
-          name: Restore `package.json` cache
-          keys:
-            - v3-deps-{{ .Branch }}-{{ checksum "package.json" }}
-            - v3-deps-{{ .Branch }}
-            - v3-deps
-      - run:
-          name: Install Node Modules using 'npm install'
-          command: npm install
-      - save_cache:
-          name: Save cache both node moduls and Cypress!
-          key: v3-deps-{{ .Branch }}-{{ checksum "package.json" }}
-          paths:
-            - ~/.cache ## cache both node modules and Cypress!
-      - run:
-          name: Run Cypress Tests Suite
-          command: npm test
-      
-      - store_artifacts:
-          name: Uploading cypress/videos artifacts
-          path: reports/videos
-      - store_artifacts:
-          name: Uploading cypress/screenshots artifacts
-          path: reports/screenshots
-      
-      
+
+# Orbs are reusable packages of CircleCI configuration that you may share across projects, enabling you to create encapsulated, parameterized commands, jobs, and executors that can be used across multiple projects.
+# See: https://circleci.com/docs/orb-intro/
+orbs:
+  # See the Node orb documentation here: https://circleci.com/developer/orbs/orb/circleci/node
+  node: circleci/node@5.2
+
+# Orchestrate jobs using workflows
+# See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
+workflows:
+  sample: # This is the name of the workflow, feel free to change it to better match your workflow.
+    # Inside the workflow, you define the jobs you want to run.
+    jobs:
+      - node/test:
+          # This is the node version to use for the `cimg/node` tag
+          # Relevant tags can be found on the CircleCI Developer Hub
+          # https://circleci.com/developer/images/image/cimg/node
+          version: '16.10'
+          # If you are using yarn, change the line below from "npm" to "yarn"
+          pkg-manager: npm
