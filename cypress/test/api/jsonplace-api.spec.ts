@@ -31,7 +31,7 @@ describe('JSON PLACEHOLDER API Test', () => {
     );
   });
 
-  it.only('Scenario 4: POST ', function () {
+  it('Scenario 4: POST ', function () {
     cy.request('https://jsonplaceholder.cypress.io/users?_limit=1').its(
       'body.0',
     ); // yields the first element of the returned list
