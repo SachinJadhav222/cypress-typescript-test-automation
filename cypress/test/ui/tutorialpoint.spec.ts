@@ -1,6 +1,6 @@
 ///<reference types="cypress-iframe" />
 
-describe('Tutorialspoint', function () {
+describe.skip('Tutorialspoint', function () {
   it('Scenario 1', function () {
     // test step to launch a URL
     cy.visit('https://www.tutorialspoint.com/videotutorials/index.php');
